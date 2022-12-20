@@ -1,0 +1,4 @@
+com\tsk\s3\config\StorageConfig.class
+com\tsk\s3\service\StorageService.class
+com\tsk\s3\controller\StorageController.class
+com\tsk\s3\FileStorageServiceApplication.class
