@@ -51,11 +51,20 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<!-- you can comment the image config below, which publishes the image to github
+the image build will be published to local docker desktop, it will not be published to
+dockerhub. to make it available we need to push the image from wsl2 ubuntu connected to docker desktop-->
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>skbee/mmv2-${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
